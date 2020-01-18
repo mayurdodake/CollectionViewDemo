@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F2009" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l4x-FG-gTd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Enter Employee Details-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email Id..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqK-Vp-qQL">
+                                <rect key="frame" x="92" y="179" width="454" height="30"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Y01-eU-qmE"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Contact Number..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfK-8E-Bw8">
+                                <rect key="frame" x="92" y="244" width="454" height="30"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YEe-d8-f1M"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyk-jk-vrR">
+                                <rect key="frame" x="219" y="322" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.87102711414474154" green="0.79633616844986022" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QoZ-U0-Qpy"/>
+                                    <constraint firstAttribute="width" constant="200" id="xVd-Ry-x6G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Generate QR Code">
+                                    <color key="titleColor" red="0.39144926275260539" green="0.32820335014677282" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnGenrateQRCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NyH-QU-sjD"/>
+                                    <segue destination="8Ng-gk-wbn" kind="show" identifier="fvctosvc" id="6i9-Xe-eqG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vV0-qu-i0B">
+                                <rect key="frame" x="92" y="114" width="454" height="30"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.43529411764705883" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="W9x-hr-iKR"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.66029895475759048" blue="0.61859631031095919" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.3491843740574464" green="0.43246608858366486" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tqK-Vp-qQL" firstAttribute="trailing" secondItem="vV0-qu-i0B" secondAttribute="trailing" id="EyJ-5o-ZRP"/>
+                            <constraint firstItem="gyk-jk-vrR" firstAttribute="top" secondItem="zfK-8E-Bw8" secondAttribute="bottom" constant="48" id="F5x-Ex-qgQ"/>
+                            <constraint firstItem="tqK-Vp-qQL" firstAttribute="leading" secondItem="vV0-qu-i0B" secondAttribute="leading" id="N7T-qQ-HUi"/>
+                            <constraint firstItem="zfK-8E-Bw8" firstAttribute="top" secondItem="tqK-Vp-qQL" secondAttribute="bottom" constant="35" id="bPi-pH-HFV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vV0-qu-i0B" secondAttribute="trailing" constant="34" id="eOi-7y-5vW"/>
+                            <constraint firstItem="vV0-qu-i0B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="gBs-RX-8h8"/>
+                            <constraint firstItem="tqK-Vp-qQL" firstAttribute="top" secondItem="vV0-qu-i0B" secondAttribute="bottom" constant="35" id="itn-6c-Hkm"/>
+                            <constraint firstItem="gyk-jk-vrR" firstAttribute="centerX" secondItem="zfK-8E-Bw8" secondAttribute="centerX" id="qS8-JC-uq9"/>
+                            <constraint firstItem="zfK-8E-Bw8" firstAttribute="trailing" secondItem="tqK-Vp-qQL" secondAttribute="trailing" id="taD-s3-TfO"/>
+                            <constraint firstItem="zfK-8E-Bw8" firstAttribute="leading" secondItem="tqK-Vp-qQL" secondAttribute="leading" id="uSl-nu-PBG"/>
+                            <constraint firstItem="vV0-qu-i0B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="xy6-zM-VZd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter Employee Details" id="Toa-5d-SxA"/>
+                    <connections>
+                        <outlet property="txtContact" destination="zfK-8E-Bw8" id="jWO-HJ-1Fd"/>
+                        <outlet property="txtEmail" destination="tqK-Vp-qQL" id="hl7-Do-LGc"/>
+                        <outlet property="txtName" destination="vV0-qu-i0B" id="cmY-ke-aPP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="336"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="FL5-76-ZA2">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="8Ng-gk-wbn" customClass="QRCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OLI-l5-Czu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ErF-7a-qYo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6wU-wa-32T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8hw-rG-LEO">
+                                <rect key="frame" x="225" y="143" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="YeS-GI-SdW"/>
+                                    <constraint firstAttribute="width" constant="150" id="wml-MC-1BG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan following generated QR Code for information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yH-J7-AhA">
+                                <rect key="frame" x="20" y="95" width="560" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.55174674117901623" blue="0.4252148083727082" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95954226847902457" green="1" blue="0.95931988575341576" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8hw-rG-LEO" firstAttribute="top" secondItem="9yH-J7-AhA" secondAttribute="bottom" constant="30" id="3pg-Pi-czp"/>
+                            <constraint firstItem="9yH-J7-AhA" firstAttribute="top" secondItem="OLI-l5-Czu" secondAttribute="bottom" constant="31" id="Zse-k5-5Y2"/>
+                            <constraint firstItem="8hw-rG-LEO" firstAttribute="centerX" secondItem="6wU-wa-32T" secondAttribute="centerX" id="bnt-vd-JLK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9yH-J7-AhA" secondAttribute="trailing" id="lJw-KH-v5F"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="9yH-J7-AhA" secondAttribute="leading" id="nOU-zr-P2W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="8hw-rG-LEO" id="JyX-WP-V2o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EtN-ba-LaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="336"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wKd-sw-Lz7">
+            <objects>
+                <navigationController id="l4x-FG-gTd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Y2-2k-s9b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Egp-dc-SiB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ug-Gv-XcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-334" y="336"/>
+        </scene>
+    </scenes>
+</document>
